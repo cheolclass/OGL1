@@ -1,4 +1,4 @@
-#include <glad/glad.h>  // glfw3.hº¸´Ù glad.h¸¦ ¸ÕÀú Æ÷ÇÔÇØ¾ß ÇÔ 
+#include <glad/glad.h>  // glfw3.hë³´ë‹¤ glad.hë¥¼ ë¨¼ì € í¬í•¨í•´ì•¼ í•¨ 
 #include <GLFW/glfw3.h>
 
 #include <iostream>
