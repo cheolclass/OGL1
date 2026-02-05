@@ -26,7 +26,7 @@ int main()
 	// glfw window creation
 	// --------------------
 	GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL", NULL, NULL);
-	// 네번째 인자 -> glfwGetPrimaryMonitor() -> 전체 화면 모드
+		// 네번째 인자 -> glfwGetPrimaryMonitor() -> 전체 화면 모드
 
 	if (window == NULL)
 	{
@@ -34,8 +34,8 @@ int main()
 		glfwTerminate();
 		return -1;
 	}
-	glfwMakeContextCurrent(window);
-	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+	glfwMakeContextCurrent(window);  // 이 창에서 사용되는 모든 OpenGL 명령어가 '이 window'의 캔버스에 그려지도록 연결 
+	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);  // 창 크기 변경 콜백 함수 등록
 
 	// glad: load all OpenGL function pointers
 	// ---------------------------------------
