@@ -12,18 +12,19 @@ const unsigned int SCR_HEIGHT = 600;
 
 int main()
 {
-	// glfw: initialize and configure
+	// 1. GLFW 초기화 및 설정
 	// ------------------------------
 	glfwInit();
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);  // OpenGL 3.x 버전 사용
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);  // OpenGL x.3 버전 사용
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);  // 3.3 코어 프로파일 사용. 
+	// glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 
 #ifdef __APPLE__
 	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 #endif
 
-	// glfw window creation
+	// 2. 윈도우 생성
 	// --------------------
 	GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL", NULL, NULL);
 		// 네번째 인자 -> glfwGetPrimaryMonitor() -> 전체 화면 모드
@@ -37,21 +38,20 @@ int main()
 	glfwMakeContextCurrent(window);  // 이 창에서 사용되는 모든 OpenGL 명령어가 '이 window'의 캔버스에 그려지도록 연결 
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);  // 창 크기 변경 콜백 함수 등록
 
-	// glad: load all OpenGL function pointers
-	// ---------------------------------------
+	// 3. GLAD 초기화 (모든 OpenGL 함수 주소 로드).  가져온 후 내부적으로 모두 각각 저장
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 	{
 		std::cout << "Failed to initialize GLAD" << std::endl;
 		return -1;
 	}
 
-	// render loop
+	// 4. 이벤트 처리 무한루프
 	// -----------
-	while (!glfwWindowShouldClose(window))
+	while (!glfwWindowShouldClose(window))  
 	{
 		// input
 		// -----
-		processInput(window);
+		processInput(window);  // 이벤트 처리 콜백 함수 호출
 
 		// render
 		// ------
@@ -64,7 +64,7 @@ int main()
 		glfwPollEvents();
 	}
 
-	// glfw: terminate, clearing all previously allocated GLFW resources.
+	// 5. 종료: terminate, clearing all previously allocated GLFW resources.
 	// ------------------------------------------------------------------
 	glfwTerminate();
 	return 0;
@@ -75,7 +75,7 @@ int main()
 void processInput(GLFWwindow* window)
 {
 	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-		glfwSetWindowShouldClose(window, true);
+		glfwSetWindowShouldClose(window, GL_TRUE); // true
 }
 
 // glfw: whenever the window size changed (by OS or user resize) this callback function executes

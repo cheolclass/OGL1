@@ -1,4 +1,4 @@
-#include <glad/glad.h>
+#include <glad/glad.h>  // 이걸 먼저 선언해야함
 #include <GLFW/glfw3.h>
 #include <iostream>
 
@@ -28,7 +28,8 @@ const char* fragmentShaderSource = "#version 330 core\n"
 "   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n" // 주황색
 "}\n\0";
 
-int main() {
+int main() 
+{	
 	// 1. GLFW 초기화 및 설정
 	glfwInit();
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -45,7 +46,7 @@ int main() {
 	glfwMakeContextCurrent(window);
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
-	// 3. GLAD 초기화 (모든 OpenGL 함수 주소 로드)
+	// 3. GLAD 초기화
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
 		std::cout << "Failed to initialize GLAD" << std::endl;
 		return -1;
