@@ -52,11 +52,11 @@ int main()
 		return -1;
 	}
 
-	// 4. 셰이더 컴파일 및 링크 ...
+	// 4. 셰이더 컴파일 및 링크 
 	// Vertex Shader
 	unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
 	glShaderSource(vertexShader, 1, &vertexShaderSource, NULL); 
-	glCompileShader(vertexShader);
+	glCompileShader(vertexShader);  // 쉐이더 코드를 GPU가 이해할 수 있게 컴파일
 
 	// Fragment Shader
 	unsigned int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
@@ -64,10 +64,10 @@ int main()
 	glCompileShader(fragmentShader);
 
 	// Shader Program 링크
-	unsigned int shaderProgram = glCreateProgram();
-	glAttachShader(shaderProgram, vertexShader);
+	unsigned int shaderProgram = glCreateProgram();  // 쉐이더 기능을 넣을 프로그램 객체 생성
+	glAttachShader(shaderProgram, vertexShader);  // 쉐이더 2개를 프로그램에 연결(넣기)
 	glAttachShader(shaderProgram, fragmentShader);
-	glLinkProgram(shaderProgram);
+	glLinkProgram(shaderProgram);  // 프로그램 내 셰이더들을 서로 연결 + 하나의 실행 가능한 파이프라인으로 만들기 
 
 	// 컴파일 후 셰이더 객체 삭제 (프로그램에 링크되었으므로 더 이상 필요 없음)
 	glDeleteShader(vertexShader);
@@ -80,7 +80,7 @@ int main()
 		 0.0f,  0.5f, 0.0f  // 위쪽 중앙
 	};
 
-	unsigned int VBO, VAO;
+	unsigned int VBO, VAO;  // 버텍스 버퍼 객체, 버텍스 배열 객체
 	glGenVertexArrays(1, &VAO);
 	glGenBuffers(1, &VBO);
 
