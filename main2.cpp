@@ -84,13 +84,13 @@ int main()
 	glGenVertexArrays(1, &VAO);
 	glGenBuffers(1, &VBO);
 
-	glBindVertexArray(VAO);
+	glBindVertexArray(VAO);  // VBO 설정 전에 VAO 바인딩
 
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);  // GL_DYNAMIC_DRAW
 
 	// 데이터 해석 방법 정의
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);  // VBO에 저장된 데이터 접근 밥법을 VAO에 알려줌(연결)
 	glEnableVertexAttribArray(0);
 
 	// 바인딩 해제
@@ -115,6 +115,11 @@ int main()
 		glfwSwapBuffers(window);
 		glfwPollEvents();  // 사용자의 입력을 기다림
 	}
+
+	// 최대 지원 통로 개수 조회: 16개
+	int nrAttributes;
+	glGetIntegerv(GL_MAX_VERTEX_ATTRIBS, &nrAttributes);
+	std::cout << "최대 지원 통로 개수: " << nrAttributes << std::endl;
 
 	// 7. 자원 해제
 	glDeleteVertexArrays(1, &VAO);
