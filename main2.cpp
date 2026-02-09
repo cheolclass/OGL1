@@ -32,7 +32,7 @@ int main()
 {	
 	// 1. GLFW 초기화 및 설정
 	glfwInit();
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3); 
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
@@ -52,7 +52,7 @@ int main()
 		return -1;
 	}
 
-	// 4. 셰이더 컴파일 및 링크
+	// 4. 셰이더 컴파일 및 링크 ...
 	// Vertex Shader
 	unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
 	glShaderSource(vertexShader, 1, &vertexShaderSource, NULL); 
