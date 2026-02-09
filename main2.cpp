@@ -55,7 +55,7 @@ int main()
 	// 4. 셰이더 컴파일 및 링크
 	// Vertex Shader
 	unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
-	glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
+	glShaderSource(vertexShader, 1, &vertexShaderSource, NULL); 
 	glCompileShader(vertexShader);
 
 	// Fragment Shader

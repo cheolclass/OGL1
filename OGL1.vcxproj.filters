@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\CHTOOLS\glad\src\glad.c">
+    <ClCompile Include="main2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="main2.cpp">
+    <ClCompile Include="..\..\ChTools\glad\src\glad.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
