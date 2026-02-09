@@ -15,10 +15,11 @@ int main()
 	// 1. GLFW 초기화 및 설정
 	// ------------------------------
 	glfwInit();
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);  // OpenGL 3.x 버전 사용
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);  // OpenGL x.3 버전 사용
-	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);  // 3.3 코어 프로파일 사용. 
-	// glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);  // OpenGL 3.x 버전 사용. 4.x도 가능
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);  // OpenGL x.3 버전 사용. 5.x도 가능
+	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);  // 3.3 코어 프로파일 사용. 즉, 이전 버전의 오래된 기능들은 사용 안함
+	// glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_COMPAT_PROFILE);  // 레거시 기능 사용함 
+	// glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);  // 창 크기 변경 불가
 
 #ifdef __APPLE__
 	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);

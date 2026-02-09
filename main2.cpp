@@ -113,7 +113,7 @@ int main()
 
 		// 버퍼 교체 및 이벤트 조사
 		glfwSwapBuffers(window);
-		glfwPollEvents();
+		glfwPollEvents();  // 사용자의 입력을 기다림
 	}
 
 	// 7. 자원 해제
