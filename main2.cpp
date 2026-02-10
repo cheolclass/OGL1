@@ -1,4 +1,4 @@
-#include <glad/glad.h>  // 이걸 먼저 선언해야함...
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
 
@@ -115,11 +115,6 @@ int main()
 		glfwSwapBuffers(window);
 		glfwPollEvents();  // 사용자의 입력을 기다림
 	}
-
-	// 최대 지원 통로 개수 조회: 16개
-	int nrAttributes;
-	glGetIntegerv(GL_MAX_VERTEX_ATTRIBS, &nrAttributes);
-	std::cout << "최대 지원 통로 개수: " << nrAttributes << std::endl;
 
 	// 7. 자원 해제
 	glDeleteVertexArrays(1, &VAO);

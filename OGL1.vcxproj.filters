@@ -18,7 +18,7 @@
     <ClCompile Include="main2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\ChTools\glad\src\glad.c">
+    <ClCompile Include="glad.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
