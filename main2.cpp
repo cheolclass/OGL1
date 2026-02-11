@@ -13,32 +13,24 @@ void processInput(GLFWwindow* window) {
 		glfwSetWindowShouldClose(window, true);
 }
 
-// 셰이더 소스 코드 (보통은 외부 파일에서 읽지만, 여기서는 문자열로 선언합니다)
-const char* vertexShaderSource = "#version 330 core\n"
-"layout (location = 0) in vec3 aPos;\n"
-"void main()\n"
-"{\n"
-"   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
-"}\0";
-
-const char* fragmentShaderSource = "#version 330 core\n"
-"out vec4 FragColor;\n"
-"void main()\n"
-"{\n"
-"   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n" // 주황색
-"}\n\0";
-
-
-// Shader sources
-const GLchar* vertexSource = R"glsl(
-    #version 150 core
-    in vec2 position;
-    void main()
-    {
-        gl_Position = vec4(position, 0.0, 1.0);
-    }
+// 셰이더 소스 코드 (보통은 외부 파일에 둠)
+const char* vertexShaderSource = R"glsl(
+#version 330 core 
+layout (location = 0) in vec3 aPos; 
+void main() 
+{ 
+   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);
+}
 )glsl";
 
+const char* fragmentShaderSource = R"glsl(
+#version 330 core 
+out vec4 FragColor; 
+void main() 
+{ 
+   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);
+}
+)glsl";
 
 int main() 
 {	
