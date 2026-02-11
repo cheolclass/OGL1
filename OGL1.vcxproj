@@ -71,8 +71,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\__GramWork\__Code\ChTools\glad\include;C:\__GramWork\__Code\ChTools\glfw-3.4.bin.WIN64\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\__GramWork\__Code\ChTools\glfw-3.4.bin.WIN64\lib-vc2022;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\__GramWork\__Code\ChTools\glad\include;C:\__GramWork\__Code\ChTools\glfw-3.4.bin.WIN64\include;C:\__GramWork\__Code\ChTools\glad\include;C:\__GramWork\__Code\ChTools\glfw-3.4.bin.WIN64\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\__GramWork\__Code\ChTools\glfw-3.4.bin.WIN64\lib-vc2022;C:\__GramWork\__Code\ChTools\glfw-3.4.bin.WIN64\lib-vc2022;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>C:\__GramWork\__Code\ChTools\glad\include;C:\__GramWork\__Code\ChTools\glfw-3.4.bin.WIN64\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>C:\__GramWork\__Code\ChTools\glfw-3.4.bin.WIN64\lib-vc2022;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

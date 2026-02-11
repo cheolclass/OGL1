@@ -28,6 +28,18 @@ const char* fragmentShaderSource = "#version 330 core\n"
 "   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n" // 주황색
 "}\n\0";
 
+
+// Shader sources
+const GLchar* vertexSource = R"glsl(
+    #version 150 core
+    in vec2 position;
+    void main()
+    {
+        gl_Position = vec4(position, 0.0, 1.0);
+    }
+)glsl";
+
+
 int main() 
 {	
 	// 1. GLFW 초기화 및 설정
@@ -86,7 +98,7 @@ int main()
 
 	glBindVertexArray(VAO);  // VBO 설정 전에 VAO 바인딩
 
-	glBindBuffer(GL_ARRAY_BUFFER, VBO);
+	glBindBuffer(GL_ARRAY_BUFFER, VBO);  // 용도를 정점 버퍼로 지정
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);  // GL_DYNAMIC_DRAW
 
 	// 데이터 해석 방법 정의
