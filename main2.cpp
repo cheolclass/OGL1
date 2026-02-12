@@ -13,24 +13,9 @@ void processInput(GLFWwindow* window) {
 		glfwSetWindowShouldClose(window, true);
 }
 
-// 셰이더 소스 코드 (보통은 외부 파일에 둠)
-const char* vertexShaderSource = R"glsl(
-#version 330 core 
-layout (location = 0) in vec3 aPos; 
-void main() 
-{ 
-   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);
-}
-)glsl";
+const char* vertexShaderSource;
+const char* fragmentShaderSource;
 
-const char* fragmentShaderSource = R"glsl(
-#version 330 core 
-out vec4 FragColor; 
-void main() 
-{ 
-   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);
-}
-)glsl";
 
 int main() 
 {	
@@ -89,7 +74,6 @@ int main()
 	glGenBuffers(1, &VBO);
 
 	glBindVertexArray(VAO);  // VBO 설정 전에 VAO 바인딩
-
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);  // 용도를 정점 버퍼로 지정
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);  // GL_DYNAMIC_DRAW
 

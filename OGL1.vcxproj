@@ -71,8 +71,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\__GramWork\__Code\ChTools\glm;C:\__GramWork\__Code\ChTools\glad\include;C:\__GramWork\__Code\ChTools\glfw-3.4.bin.WIN64\include;C:\__GramWork\__Code\ChTools\glad\include;C:\__GramWork\__Code\ChTools\glfw-3.4.bin.WIN64\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\__GramWork\__Code\ChTools\glfw-3.4.bin.WIN64\lib-vc2022;C:\__GramWork\__Code\ChTools\glfw-3.4.bin.WIN64\lib-vc2022;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\_CHCH\_Codes\CHTOOLS\glm;C:\_CHCH\_Codes\CHTOOLS\glad\include;C:\_CHCH\_Codes\CHTOOLS\glfw-3.4.bin.WIN64\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\_CHCH\_Codes\CHTOOLS\glfw-3.4.bin.WIN64\lib-vc2022;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>C:\__GramWork\__Code\ChTools\glm;C:\__GramWork\__Code\ChTools\glad\include;C:\__GramWork\__Code\ChTools\glfw-3.4.bin.WIN64\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
@@ -138,8 +138,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="fragmentShader.glsl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="glad.c" />
     <ClCompile Include="main3.cpp" />
+    <ClCompile Include="shader.cpp" />
+    <ClCompile Include="vertexShader.glsl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="shader.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
