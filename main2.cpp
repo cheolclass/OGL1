@@ -13,6 +13,7 @@ void processInput(GLFWwindow* window) {
 		glfwSetWindowShouldClose(window, true);
 }
 
+// 셰이더 소스 코드 - 버텍스 셰이더
 const char* vertexShaderSource = R"glsl(  // 개행을 추가. 다음 줄에 코드 작성 
 #version 330 core 
 layout (location = 0) in vec3 aPos; 
@@ -24,6 +25,7 @@ void main()
 }  // 개행을 추가. 다음 줄에 코드 작성
 )glsl";
 
+// 셰이더 소스 코드 - 프래그먼트 셰이더
 const char* fragmentShaderSource = R"glsl(
 #version 330 core 
 out vec4 color; 
