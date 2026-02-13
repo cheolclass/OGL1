@@ -13,8 +13,26 @@ void processInput(GLFWwindow* window) {
 		glfwSetWindowShouldClose(window, true);
 }
 
-const char* vertexShaderSource;
-const char* fragmentShaderSource;
+const char* vertexShaderSource = R"glsl(  // 개행을 추가. 다음 줄에 코드 작성 
+#version 330 core 
+layout (location = 0) in vec3 aPos; 
+void main() 
+{ 
+	gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);
+	//gl_Position.xyz = vertexPosition_modelspace;
+	//gl_Position.w = 1.0;
+}  // 개행을 추가. 다음 줄에 코드 작성
+)glsl";
+
+const char* fragmentShaderSource = R"glsl(
+#version 330 core 
+out vec4 color; 
+
+void main() 
+{ 
+   color = vec4(1.0f, 0.5f, 0.2f, 1.0f);
+}
+)glsl";
 
 int main() 
 {	
