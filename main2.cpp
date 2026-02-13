@@ -16,7 +16,6 @@ void processInput(GLFWwindow* window) {
 const char* vertexShaderSource;
 const char* fragmentShaderSource;
 
-
 int main() 
 {	
 	// 1. GLFW 초기화 및 설정
