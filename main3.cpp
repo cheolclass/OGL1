@@ -72,7 +72,7 @@ int main()
 		glBindVertexArray(VAO);
 		glDrawArrays(GL_TRIANGLES, 0, 3); // 인덱스 버퍼 없이 정점 데이터를 순차적으로 읽어와 그림
 				// glDrawElements() -> 인덱스 버퍼를 통해 정점 데이터 참조 -> 중복X, 메모리 효율성 향상 
-				// 다음 예제에	서 다룸 
+				// 다음 예제에서 다룸 
 
 		glfwSwapBuffers(window);
 		glfwPollEvents();
