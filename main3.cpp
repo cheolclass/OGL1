@@ -58,6 +58,7 @@ int main()
 	glBufferData(GL_ARRAY_BUFFER, sizeof(g_vertex_buffer_data), g_vertex_buffer_data, GL_STATIC_DRAW);  // 데이터를 현재 바인딩된 버퍼에 물리적 복사. CPU 정점 배열 데이터 -> GPU 버퍼 메모리로 통째로 복사
 	gladLoadGL();
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);  // VBO에 복사된 데이터를 어떻게 읽어야 하는지(접근 밥법)를 VAO에 알려줌(연결)
+	//	속성 번호, 데이터 개수, 데이터 타입, 정규화 여부, 다음 정점(속성데이터)까지의 거리, Offset(시작점 위치)
 	glEnableVertexAttribArray(0);  // 0번에 위치한 정점 속성 사용을 활성화. 비로소 GPU가 렌더링 시 해당 데이터를 참조 가능하게 됨
 	glBindVertexArray(0);  // VAO 해제. VBO보다 먼저 해제해야 함. VAO가 VBO의 상태를 기억하기 때문
 	glBindBuffer(GL_ARRAY_BUFFER, 0);  // VBO 해제
