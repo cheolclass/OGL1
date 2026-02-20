@@ -42,6 +42,12 @@ int main()
 	//GLuint shaderID = LoadShaders("vertexShader.glsl", "fragmentShader.glsl");
 	GLuint shaderID = LoadShaders("vertexShader4.glsl", "fragmentShader4.glsl");
 
+	//static const GLfloat g_vertex_buffer_data[] = {
+	//	-1.0f, -1.0f, 0.0f,
+	//	 1.0f, -1.0f, 0.0f,
+	//	 0.0f,  1.0f, 0.0f,
+	//};
+
 	GLfloat g_vertex_buffer_data[] = {
 		0.5f,  0.5f, 0.0f,  1.0f, 0.0f, 0.0f, // 0번: 오른쪽 위 (빨강)
 		0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f, // 1번: 오른쪽 아래 (초록)
